@@ -1,8 +1,26 @@
-import { Fragment } from "react";
+/* eslint-disable @next/next/no-html-link-for-pages */
+import { useEffect } from "react";
 import Image from "next/image";
 import { Layout } from "components";
 
 export default function Home() {
+  useEffect(() => {
+    document.addEventListener("mousemove", move);
+
+    function move(e) {
+      this.querySelectorAll(".move").forEach((layer, idx) => {
+        const speed = layer.getAttribute("data-speed");
+
+        const x = (window.innerWidth - e.pageX * speed) / 120;
+        const y = (window.innerWidth - e.pageY * speed) / 120;
+
+        if (idx <= 1)
+          layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        else layer.style.transform = `translateX(${y}px) translateY(${x}px)`;
+      });
+    }
+  }, []);
+
   return (
     <Layout>
       <div className="home__img">

@@ -8,6 +8,7 @@ const nextConfig = {
       layoutRaw: true,
     },
   },
+  reactStrictMode: false,
 };
 
 module.exports = nextConfig;
