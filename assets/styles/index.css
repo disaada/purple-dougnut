@@ -244,12 +244,17 @@ img {
 .swiper-slide img {
   width: 50%;
   object-fit:contain;
+  margin: 0 auto;
 }
 
 .swiper .swiper-slide {
   width: auto !important;
   margin: 0 auto;
   display: flex;
+}
+
+.thumb .swiper .swiper-slide {
+  margin-right: 0px !important; 
 }
 
 .swiper-slide div {
@@ -265,6 +270,16 @@ img {
 
 .swiper-slide div > small {
   font-size: 20px;
+}
+
+.about-slider .swiper-slide {
+  align-items: center !important;
+}
+
+.about-slider .swiper-slide div > span {
+  font-size: 15vh;
+  font-weight: bolder;
+  display: block;
 }
 
 /* MEDIA QUERIES */
@@ -302,8 +317,9 @@ img {
 
 @media screen and (min-width: 1024px) {
     .home__img {
-        width: 70vw;
-        height:70vh;
+        padding: 10vh 0;
+        width: 100%;
+        height: 100%;
     }
 
     #loader img {

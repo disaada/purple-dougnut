@@ -75,7 +75,7 @@ const Menu = () => {
           slidesPerView={8}
           onSwiper={setThumbsSwiper}
           modules={[Thumbs]}
-          style={{ height: "20vh" }}
+          style={{ height: "15vh" }}
           watchSlidesProgress
           className="thumb"
         >
