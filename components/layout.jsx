@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { Nav, Loader } from "components";
@@ -69,7 +70,7 @@ const Layout = ({ children }) => {
       <header className="l-header">
         <nav className="nav bd-grid">
           <div>
-            <a href="index.html" className="nav__logo">
+            <a href="/" className="nav__logo">
               Purple Donut
             </a>
           </div>
