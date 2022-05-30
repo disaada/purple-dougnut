@@ -1,7 +1,7 @@
 import { Layout } from "components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper";
-import { useRef, useEffect, useState, Fragment } from "react";
+import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { About as AboutList } from "content";
 import parse from "html-react-parser";
@@ -13,12 +13,20 @@ const Menu = () => {
   const [slideIdx, setSlideIdx] = useState(0);
 
   useEffect(() => {
-    gsap.set(".about", { autoAlpha: 0 });
-    gsap.to(".about", {
+    gsap.set(".about-up", { autoAlpha: 0 });
+    gsap.to(".about-up", {
       duration: 1,
-      startAt: { autoAlpha: 0, y: -100 },
+      startAt: { autoAlpha: 0, y: 200 },
       autoAlpha: 1,
-      y: "4%",
+      y: "0%",
+    });
+
+    gsap.set(".about-down", { autoAlpha: 0 });
+    gsap.to(".about-down", {
+      duration: 1,
+      startAt: { autoAlpha: 0, y: -200 },
+      autoAlpha: 1,
+      y: "0%",
     });
   }, [slideIdx]);
 
@@ -38,10 +46,8 @@ const Menu = () => {
         >
           {AboutList.map((val, idx) => (
             <SwiperSlide key={val + idx}>
+              {val?.image}
               <div>
-                <div>
-                  
-                </div>
                 <span>{parse(val.name)}</span>
                 <i>{val.desc}</i>
               </div>
