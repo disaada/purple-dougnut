@@ -2,14 +2,13 @@ import { Layout } from "components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Thumbs } from "swiper";
 import Image from "next/image";
-import { useRef, useEffect, useState, Fragment } from "react";
+import { useEffect, useState, Fragment } from "react";
 import { gsap } from "gsap";
 import { Menu as MenuList } from "content";
 import "swiper/css";
 import "swiper/css/thumbs";
 
 const Menu = () => {
-  const boxRef = useRef();
   const [slideIdx, setSlideIdx] = useState(0);
   const [thumbsSwiper, setThumbsSwiper] = useState();
 
@@ -25,7 +24,7 @@ const Menu = () => {
 
   return (
     <Layout>
-      <div className="home__data menu-slider" ref={boxRef}>
+      <div className="home__data menu-slider">
         <Swiper
           spaceBetween={50}
           slidesPerView={1}
