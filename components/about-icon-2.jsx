@@ -8,7 +8,8 @@ const AboutIcon2 = () => {
         width={5000}
         height={5000}
         src="/img/flour-1.png"
-        className="about-down"
+        className="about2-right"
+        data-speed="5"
         alt=""
         style={{
           top: '120px',
@@ -21,11 +22,12 @@ const AboutIcon2 = () => {
         width={5000}
         height={5000}
         src="/img/flour-2.png"
-        className="about-down"
+        className="about2-left"
+        data-speed="-5"
         alt=""
         style={{
           top: '80px',
-          right: '-50px',
+          right: '1%',
           width: '30%'
         }}
       />
@@ -34,7 +36,8 @@ const AboutIcon2 = () => {
         width={5000}
         height={5000}
         src="/img/flour-3.png"
-        className="about-up"
+        className="about2-left"
+        data-speed="5"
         alt=""
         style={{
           top: '55%',

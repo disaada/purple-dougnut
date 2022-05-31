@@ -7,25 +7,13 @@ const AboutIcon = () => {
         layout="raw"
         width={5000}
         height={5000}
-        src="/img/plant-3.png"
+        src="/img/plant-1.png"
+        className="about1-down"
         data-speed="5"
         alt=""
         style={{
-          top: '80%',
-          right: '40%',
-          width: '20%'
-        }}
-      />
-      <Image
-        layout="raw"
-        width={5000}
-        height={5000}
-        src="/img/plant-1.png"
-        className="about-up"
-        alt=""
-        style={{
-          top: '0',
-          left: '-9%',
+          top: '3%',
+          left: '-5%',
           width: '30%'
         }}
       />
@@ -34,11 +22,12 @@ const AboutIcon = () => {
         width={5000}
         height={5000}
         src="/img/plant-5.png"
-        className="about-down"
+        className="about1-down"
+        data-speed="5"
         alt=""
         style={{
-          top: '30px',
-          right: '-30px',
+          top: '7%',
+          right: '1%',
           width: '20%'
         }}
       />
@@ -47,7 +36,8 @@ const AboutIcon = () => {
         width={5000}
         height={5000}
         src="/img/plant-4.png"
-        className="about-down"
+        className="about1-up"
+        data-speed="5"
         alt=""
         style={{
           top: '65%',
@@ -60,11 +50,12 @@ const AboutIcon = () => {
         width={5000}
         height={5000}
         src="/img/plant-2.png"
-        className="about-down"
+        className="about1-up"
+        data-speed="-5"
         alt=""
         style={{
           top: '55%',
-          right: '0',
+          right: '5%',
           width: '20%'
         }}
       />

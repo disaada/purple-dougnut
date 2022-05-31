@@ -1,53 +1,61 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Layout } from "components";
 import Image from "next/image";
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
+import { gsap } from "gsap";
 
 const Order = () => {
-  const boxRef = useRef();
+  const orderClass = ["order-list-1", "order-list-2", "order-list-3"];
+
+  function showIcon(el) {
+    const wrapper = el;
+    const img = wrapper.getElementsByTagName("img");
+    const a = wrapper.getElementsByTagName("a");
+    a[0].style.opacity = 1;
+    [...img].map((image) => {
+      image.style.transform = "scale(1)";
+      image.style.transition = "0.5s";
+    });
+  }
+
+  function hideIcon(el) {
+    const wrapper = el;
+    const img = wrapper.getElementsByTagName("img");
+    const a = wrapper.getElementsByTagName("a");
+    a[0].style.opacity = 0.5;
+    [...img].map((image) => {
+      image.style.transform = "scale(0)";
+      image.style.transition = "0.5s";
+    });
+  }
+
+  const fadeIn = (target, prop) => {
+    gsap.from(target, { duration: 1, opacity: 0, delay: 3, ...prop });
+  };
 
   useEffect(() => {
-    const el = document.getElementById("order-list-1");
-    el.addEventListener("mouseover", (evt) => showIcon(el), false);
-    el.addEventListener("mouseout", (evt) => hideIcon(el), false);
+    fadeIn(".side-icon-left", { x: -500 });
+    fadeIn(".side-icon-right", { x: 500 });
 
-    const el2 = document.getElementById("order-list-2");
-    el2.addEventListener("mouseover", (evt) => showIcon(el2), false);
-    el2.addEventListener("mouseout", (evt) => hideIcon(el2), false);
-
-    const el3 = document.getElementById("order-list-3");
-    el3.addEventListener("mouseover", (evt) => showIcon(el3), false);
-    el3.addEventListener("mouseout", (evt) => hideIcon(el3), false);
-
-    function showIcon(el) {
-      const wrapper = el;
-      const img = wrapper.getElementsByTagName("img");
-      const a = wrapper.getElementsByTagName("a");
-      a[0].style.opacity = 1;
-      [...img].map((image) => {
-        image.style.transform = 'scale(1)'
-        image.style.transition = '0.5s'
-      });
-    }
-
-    function hideIcon(el) {
-      const wrapper = el;
-      const img = wrapper.getElementsByTagName("img");
-      const a = wrapper.getElementsByTagName("a");
-      a[0].style.opacity = 0.5  ;
-      [...img].map((image) => {
-        image.style.transform = 'scale(0)'
-        image.style.transition = '0.5s'
-      });
-    }
+    orderClass.map((classname) => {
+      const el = document.getElementById(classname);
+      el.addEventListener("mouseover", (evt) => showIcon(el), false);
+      el.addEventListener("mouseout", (evt) => hideIcon(el), false);
+    });
   }, []);
 
   return (
     <Layout>
-      <div
-        ref={boxRef}
-        className="home__data order-wrapper"
-        style={{ textAlign: "center" }}
-      >
+      <Image
+        layout="raw"
+        width={500}
+        height={500}
+        src="/img/purple-cross.png"
+        alt=""
+        className="side-icon-left"
+        style={{ width: "50vh", position: "absolute", left: "-3%" }}
+      />
+      <div className="home__data order-wrapper" style={{ textAlign: "center" }}>
         <div id="order-list-1">
           <Image
             layout="raw"
@@ -118,6 +126,15 @@ const Order = () => {
           />
         </div>
       </div>
+      <Image
+        layout="raw"
+        width={500}
+        height={500}
+        src="/img/purple-basic.png"
+        alt=""
+        className="side-icon-right"
+        style={{ width: "50vh", position: "absolute", right: "-2%" }}
+      />
     </Layout>
   );
 };

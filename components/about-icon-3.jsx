@@ -8,12 +8,13 @@ const AboutIcon3 = () => {
         width={5000}
         height={5000}
         src="/img/sugar-1.png"
-        className="about-down"
+        className="about3-down"
+        data-speed="-5"
         alt=""
         style={{
-          top: '0px',
+          top: '0',
           left: '30%',
-          width: '35%'
+          width: '30%'
         }}
       />
       <Image
@@ -21,7 +22,8 @@ const AboutIcon3 = () => {
         width={5000}
         height={5000}
         src="/img/sugar-2.png"
-        className="about-up"
+        className="about3-up"
+        data-speed="5"
         alt=""
         style={{
           top: '60%',
@@ -34,7 +36,8 @@ const AboutIcon3 = () => {
         width={5000}
         height={5000}
         src="/img/sugar-3.png"
-        className="about-up"
+        className="about3-up"
+        data-speed="5"
         alt=""
         style={{
           top: '60%',
