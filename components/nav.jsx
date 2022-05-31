@@ -5,6 +5,7 @@ const Nav = () => {
     ["/", "Home"],
     ["/menu", "Product"],
     ["/about", "About"],
+    ["/order", "Order Now"],
   ];
 
   return (
