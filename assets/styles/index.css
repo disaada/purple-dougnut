@@ -277,7 +277,7 @@ img {
   align-items: center !important;
 }
 
-.about-slider .swiper-slide div > span {
+.about-slider div > span {
   font-size: 15vh;
   font-weight: bolder;
   display: block;
@@ -296,6 +296,30 @@ img {
   position: absolute;
   background-color: transparent;
   z-index: 500;
+}
+
+.order-wrapper {
+  width: 100%;
+  font-size: 15vh;
+  font-weight: bolder;
+}
+
+.order-wrapper div {
+  margin: auto 0;
+}
+
+.order-wrapper img {
+  transform: scale(0);
+}
+
+.order-wrapper a {
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.5;
+}
+
+.order-wrapper a:hover {
+  color: var(--first-color-dark);
 }
 
 /* MEDIA QUERIES */

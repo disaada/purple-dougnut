@@ -46,19 +46,6 @@ const Layout = ({ children }) => {
   useEffect(() => {
     // FADEIN PAGE
     if (!el) return;
-    gsap.from(q(".nav__logo, .nav__toggle"), {
-      opacity: 0,
-      duration: 1,
-      delay: 4,
-      y: 10,
-    });
-    gsap.from(".nav__item", {
-      opacity: 0,
-      duration: 1,
-      delay: 4,
-      y: 30,
-      stagger: 0.2,
-    });
     gsap.from(q(".home__data"), { opacity: 0, duration: 1, delay: 3, y: 30 });
     gsap.from(q(".home__button"), { opacity: 0, duration: 1, delay: 5, y: 30 });
     gsap.from(q(".home__img"), { opacity: 0, duration: 1, delay: 3, y: 30 });
